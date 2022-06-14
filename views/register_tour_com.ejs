@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/styles.css">
+</head>
+<body>
+
+    <%- include('nav.ejs') %> 
+
+    <div class="row">
+        <div class="regImg col"></div>
+
+        <form action="/tour_com/add" method="post" class="regForm">
+
+            
+                
+            <h2>Register a Tour Company</h2>
+            
+            <div class="regCon">
+                <input type="text" name="tour_ref_num" id="tour_ref_num" placeholder="tour_ref_num">
+
+                <input type="text" name="company_nm" id="company_nm" placeholder="company_nm">
+    
+                <input type="text" name="address" id="address" placeholder="address">
+
+                <input type="text" name="tel_num" id="tel_num" placeholder="tel_num">
+                
+            </div>
+            
+
+            <div id="container">
+                <input type="email" name="email" id="email" placeholder="Email Address">
+    
+                <input type="password" name="password" id="password" placeholder="Password">
+                <br>
+            </div>
+
+            <button type="submit">Submit</button>
+           
+        </form>
+    </div>
+    
+   
+</body>
+</html>
