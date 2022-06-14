@@ -19,10 +19,10 @@ app.use(express.static(path.join(__dirname)));
 var indexRoute = require('./routes/index');
 var bookingRoute = require('./routes/booking');
 var register_tour_comRoute = require('./routes/register_tour_com');
-// var view_payslipRoute = require('./routes/view_payslip');
+var manage_tour_comRoute = require('./routes/manage_tour_com');
 // var employee_payslip_listRoute = require('./routes/employee_payslip_list');
 // var employee_payslip_viewRoute = require('./routes/employee_payslip_view');
-// var loginRoute = require('./routes/login');
+var loginRoute = require('./routes/login');
 
 
 
@@ -41,9 +41,9 @@ app.use(flash());
 
 //routing middleware
 // app.use(employee_registerRoute);
-// app.use(loginRoute);
+app.use(loginRoute);
 // app.use(view_payslipRoute);
-// app.use(employee_payslip_listRoute);
+app.use(manage_tour_comRoute);
 app.use(register_tour_comRoute);
 app.use(bookingRoute),
 app.use('/', indexRoute);

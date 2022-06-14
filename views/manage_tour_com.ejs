@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= page_title  %> </title>
+    <link rel="stylesheet" href="../public/styles.css">
+</head>
+<body>
+    
+    <%- include('nav.ejs') %> 
+    
+
+    <a href="/logout" class="userLogout"><button type="submit" >Logout</button></a>
+
+    <h1>Manage Tour Companies</h1>
+
+    <form action="" method="post">
+
+        <input type="hidden" name="id" id="id">
+
+        <div class="con">
+            <div class="CNP">
+                <a href="/register_tour_com"><button type="button">Register New Tour Company</button></a>
+            </div>
+
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Reference Number</th>
+                    <th>Company Name</th>
+                    <th>Address</th>
+                    <th>Registration Date</th>
+                    <th>Telephone Number</th>
+                    <th>Action</th>
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+                <% if(manTour.length) { for(var i = 0; i< manTour.length; i++) {%>
+                    <tr>
+                        <td><%= manTour[i].tour_ref_num %></td>
+                        <td><%= manTour[i].company_nm %></td>
+                        <td><%= manTour[i].address %></td>
+                        <td><%= new Date(manTour[i].reg_date).toLocaleDateString('fr-CA') %></td>
+                        <td><%=manTour[i].tel_num %></td>
+                        <td>
+                            <a href="/manTour_com/edit/<%=manTour[i].id%>" class="update">Edit</a>
+                            <a href="/manTour_com/delete/<%=manTour[i].id%>" class="delete">Delete</a>
+                        </td>
+                    </tr>
+                <% } %>
+                <%
+        
+                }else{ %>
+                    <tr>
+                        <td colspan="5" style="text-align: center;"><b>No Registered Tour Company</td>
+                    </tr>
+                <% } %>
+            </tbody>
+
+        </table>
+               
+    </form>
+    
+</body>
+</html>

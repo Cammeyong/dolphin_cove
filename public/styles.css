@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav {
+    width: 100%; 
+    position: relative;
+    background-color: blue;
+    
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    margin-left: 50%;
+    
+}nav ul li {
+    padding: 10px 5px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.3em;
+}
+.logForm {
+    width: 500px;
+    height: auto;
+    margin-left: 30%;
+    background-color: rgb(238, 239, 240, 0.5);
+    text-align: center;
+    margin-top: 6%;
+    padding: 2% 0;
+    box-shadow: 1px 2px 1px 2px rgb(48, 68, 247);
+}
+.loginIcon {
+    width: 220px;
+    height: 200px;
+}
+.logForm input[name="email"], input[name="password"] {
+    padding: 3%;
+    width: 70%;
+    border-radius: 15px;
+    margin: 1% 0;
+    border: 1px solid black;
+}
+.logForm .remGet {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 2% 15% 1% 15%;
+}
+.logForm button {
+    padding: 10px;
+    width: 30%;
+    margin-bottom: 3%;
+    background-color: black;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 20px;
+    border: none;
+}

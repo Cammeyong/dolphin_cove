@@ -14,7 +14,7 @@ router.post('/login', async function(req, res) {
     // var password = req.body.password;
     
 
-    conn.query(" SELECT * FROM employee_payroll.employees WHERE email = ?" , [email], function (err, rows) {
+    conn.query(" SELECT * FROM dolphin_cove.auth_users WHERE email = ?" , [email], function (err, rows) {
 
         // if login is incorrect or not found
         
@@ -25,7 +25,7 @@ router.post('/login', async function(req, res) {
                 req.session.loggedin = true;
                 req.session.first_nm = rows[0].first_nm;
                 req.session.last_nm = rows[0].last_nm;
-                req.session.emply_id = rows[0].emply_id;
+                // req.session.emply_id = rows[0].emply_id;
                 req.session.is_authorised = rows[0].authorised;
                 if (req.session.is_authorised == 1) {
 
@@ -35,7 +35,7 @@ router.post('/login', async function(req, res) {
                     });
                     
                 } else if (req.session.is_authorised == 0 ) {
-                    res.redirect('/dolphin_staff_view')
+                    res.redirect('/manage_tour_com')
                 }
                return 
              }

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var conn = require('../lib/db');
-var bcrypt = require('bcrypt');
+// var bcrypt = require('bcrypt');
 
 // function showElement() {
 //     element = document.getElementById('container');
@@ -31,19 +31,28 @@ router.get('/register_tour_com', function(req,res,next){
 
 router.post('/tour_com/add', async function(req,res,){
    
-    try {
-        var password = req.body.password;
-        password = await bcrypt.hash(password, 10);
+    
+        // var password = req.body.password;
+        // password = await bcrypt.hash(password, 10);
 
         let data = { tour_ref_num:   req.body.tour_ref_num,
             company_nm:     req.body.company_nm,
             address:      req.body.address,
+            reg_date:       req.body.reg_date,
             tel_num:        req.body.tel_num,
-            email:        req.body.email,
-            password:     password,    
+            // email:        req.body.email,
+            // password:     password,    
         };
+
+        
+        let sqlQuery = "INSERT INTO dolphin_cove.tour_companies SET ?";
+
+        // let sqlQuery2 = "INSERT INTO dolphin_cove.auth_users (email, password)"
+        // VALUES('?', '?');
+
     
-        let sqlQuery = "INSERT INTO dolphin_cove.tour_companies, dolphin_cove.auth_users  SET ?" ;
+        // let sqlQuery = "INSERT INTO dolphin_cove.tour_companies SET ?" 
+        //     sqlQuery += "INSERT INTO dolphin_cove.auth_users ();
     
         conn.query(sqlQuery, data,(err, results) => {
         if(err) {
@@ -64,13 +73,6 @@ router.post('/tour_com/add', async function(req,res,){
         //     }
         //     // res.send(JSONResponse(results));
         // });
-
-    }catch(err) {
-        console.log(err)
-        res.status(500).send('Something went wrong')
-    }
-    
-   
 })
 
 module.exports = router;
