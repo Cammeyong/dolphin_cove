@@ -43,7 +43,7 @@ nav ul li a{
     width: 70%;
     border-radius: 15px;
     margin: 1% 0;
-    border: 1px solid black;
+    border: 1px solid blue;
 }
 .logForm .remGet {
     display: flex;
@@ -55,9 +55,37 @@ nav ul li a{
     padding: 10px;
     width: 30%;
     margin-bottom: 3%;
-    background-color: black;
+    background-color: blue;
     color: white;
     font-size: 1.2em;
     border-radius: 20px;
     border: none;
+}
+
+.homeImg {
+    background-image: url(https://cdn1.dtraveller.net/content/aquaventuras/roys/banner_royal_aqua_VIP.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 34rem;
+    animation: slide 20s infinite;
+    max-width: 100%;
+    display: flex;
+    
+}
+@keyframes slide {
+
+    25% {
+        background-image: url(https://www.dtraveller.com/promotions/images/DD_deals_868x362_RIVIERA-ing.jpg?v=7.8.29);
+    }
+    50% {
+        background-image: url(https://www.dtraveller.com/promotions/images/DD_deals_868x362_COZUMEL-ing.jpg?v=7.8.29);
+    }
+    75% {
+        background-image: url(https://www.dtraveller.com/promotions/imagesDD/dolphincoveja-banner.jpg?v=1);
+    }
+    100% {
+        background-image: url(https://www.dolphincoveja.com/Content/src/programs/ne/locacion-Dolphin-Cove-Negril.jpg); 
+    }
+
 }

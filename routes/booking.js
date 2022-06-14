@@ -20,16 +20,18 @@ router.get('/booking', function(req,res,next){
 
 router.post('/booking/add', function(req,res,){
    
+    var ticket_num = Date.now().toString().slice(-7);
 
     let data = {tour_ref_num:   req.body.tour_ref_num,
+        guest_nm:       req.body.guest_nm,
         package_nm:     req.body.package_nm,
         adult_num:      req.body.adult_num,
         child_num:      req.body.child_num,
         sche_date:      req.body.sche_date, 
-        sche_time:      req.body.sche_time,
         total_cost:     req.body.total_cost,
         hotel_staying:  req.body.hotel_staying,
         date_of_booking: req.body.date_of_booking,
+        ticket_num:     ticket_num,
     };
 
     let sqlQuery = "INSERT INTO dolphin_cove.bookings SET ?";
