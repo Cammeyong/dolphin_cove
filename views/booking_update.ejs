@@ -11,8 +11,11 @@
     <%- include('nav.ejs') %> 
 
     <h2>Update Booking Information</h2>
-    
-    <form action="/bookingInfo/update/:id" method="post" class="updateForm">
+
+   <div class="row">
+       <div class="updateImg col"></div>
+
+       <form action="/bookingInfo/update/:id" method="post" class="updateForm col">
 
 
         <input type="hidden" name="id" value="<%= data[0].id %>"/>
@@ -84,13 +87,21 @@
                     <input type="text" name="child_num" value="<%= data[0].child_num %>" placeholder="<%= data[0].child_num %>" />
                 </label>
                 
-            </div>
+                <br><br>
+                <pre></pre>
 
-            <div class="netIncome col">
                 <label for="">Total Cost:
                     <input type="text" name="total_cost" value="$<%= data[0].total_cost %>" placeholder="<%= data[0].total_cost %>" />
                 </label>
+
                 <br><br>
+            <pre></pre>
+                
+            </div>
+
+            
+            <div class="netIncome col">
+               
                 <pre></pre>
 
                 <label for="">Payment Method:
@@ -105,6 +116,8 @@
             <button type="submit">Submit Changes</button>
         </div>
     </form>
+   </div>
+    
 
 </body>
 </html>
