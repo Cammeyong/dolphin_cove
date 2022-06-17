@@ -11,26 +11,31 @@ var conn = require('../lib/db');
 
 router.get('/register_tour_com', function(req,res,next){
 
-
+    if(req.seesion.loggedin == true) {
  
-    conn.query ("SELECT * FROM tour_companies", function(err, rows) {
-        if(err){
-            console.log(err);
-        } else {
-            res.render('../views/register_tour_com', {
-                it: rows,
-                // myFunc: showElement()
-            }); 
+        conn.query ("SELECT * FROM tour_companies", function(err, rows) {
+            if(err){
+                console.log(err);
+            } else {
+                res.render('../views/register_tour_com', {
+                    it: rows,
+                    my_session:req.session
+                    // myFunc: showElement()
+                }); 
 
-             next();
-        }
-    })
+                next();
+            }
+        })
+    }else{
+        res.redirect('/login')
+    }
 
 });
 
 
 router.post('/tour_com/add', async function(req,res,){
    
+    if(req.session.loggedin == true) {
     
         // var password = req.body.password;
         // password = await bcrypt.hash(password, 10);
@@ -73,6 +78,9 @@ router.post('/tour_com/add', async function(req,res,){
         //     }
         //     // res.send(JSONResponse(results));
         // });
+    }else{
+        res.redirect('/login')
+    }
 })
 
 module.exports = router;

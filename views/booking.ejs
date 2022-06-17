@@ -5,107 +5,116 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        nav {
-            width: 100%; 
-            position: relative;
-            background-color: blue;
-            
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            width: 40%;
-            justify-content: space-between;
-            margin-left: 50%;
-            
-        }nav ul li {
-            padding: 10px 5px;
-        }
-        nav ul li a{
-            text-decoration: none;
-            color: white;
-            font-size: 1.3em;
-        }
-    </style>
+    <link rel="stylesheet" href="../public/styles.css">
 </head>
 <body>
 
     <%- include('nav.ejs') %> 
-    
-    <form action="/booking/add" method="post" class="regForm">
 
-            
+    <div class="bookImg"></div>
+    
+    <form action="/booking/add" method="post" class="bookForm">
                 
         <h2>Book Now</h2>
         
-        <div class="regCon">
+        <div class="bookCon">
 
-            <input type="text" name="guest_nm" id="guest_nm">
-            <select name="package_nm" id="package_nm"> 
-                <option>Select Your Package</option>
-                <option value="Dolphin Royal Swim">Dolphin Royal Swim</option>
-                <option value="Dolphin Swim Adventure">Dolphin Swim Adventure</option>
-                <option value="Encounter">Encounter</option>
-                <option value="Admission Plus">Admission Plus</option>
-                <option value="Shark Encounter">Shark Encounter</option>
-            </select>
+            <div class="col">
 
-            <select name="adult_num" id="">
-                <option></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
+                <label for="">Enter your name:</label>
+                <input type="text" name="guest_nm" id="guest_nm">
 
-            <select name="child_num" id="">
-                <option></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
-           
+                <br>
 
-            <input type="date" name="date_of_booking" id="date_of_booking">
-           
+                <label for="">Number of Adult(s):</label>
+                <select name="adult_num" id="">
+                    <option></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
 
-            <input type="text" name="hotel_staying" id="hotel_staying">
+                <br>
+                <label for="">Date booking was made:</label>
+                <input type="date" name="date_of_booking" id="date_of_booking">
+
+                <br>
+
+                <label for="">Tour Company:</label>
+                <select name="tour_ref_num" id="tour_ref_num">
+                    <option value="1">Dolphin Cove</option>
+                    <option value="2">Dream Tours</option>
+                    <option value="3">Camelious Tours</option>
+                    <option value="4">Scarlet Tours</option>
+                    <option value="5">Pleasure Tours</option>
+                    <option value="6">Sure Tours</option>
+                </select>
+        
+                <br>
+
+                <label for="">Select Payment Method:</label>
+                <select name="pay_id" id="pay_id">
+                    <option value="1"> Cash</option>
+                    <option value="2">Credit Card</option>
+                    <option value="3">Debit Card</option>
+                    <option value="4">Bank Deposit</option>
+                    <option value="5">Mobile Payment</option>
+                </select>
+
+            </div>
+
+            <div class="col">
+                <label for="">Select Package:</label>
+                <select name="package_id" id="package_id"> 
+                    <option>Select Package</option>
+                    <option value="1">Dolphin Royal Swim</option>
+                    <option value="2">Dolphin Swim Adventure</option>
+                    <option value="3">Encounter</option>
+                    <option value="4">Admission Plus</option>
+                    <option value="5">Shark Encounter</option>
+                </select>
+                <br>
+
+                <label for="">Number of children:</label>
+                <select name="child_num" id="">
+                    <option></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
             <br>
 
-            <br>
-            <select name="tour_ref_num" id="tour_ref_num">
-            <option value="1">Dolphin Cove</option>
-            </select>
+                <label for="">Hotel staying at:</label>
+                <input type="text" name="hotel_staying" id="hotel_staying">
+                <br>
 
-            <input type="date" name="sche_date" id="sche_date">
 
-            <br>
+                <label for="">Reservation Date</label>
+                <input type="date" name="sche_date" id="sche_date">
 
-            <input type="number" name="total_cost" id="total_cost">
+                <br>
 
-            <button type="submit">Submit</button>
-            
+                <label for="">Total Cost</label>
+                <input type="number" name="total_cost" id="total_cost">
+
+            </div>
+
         </div>
-       
+        <button type="submit">Submit</button>
     </form>
 
 </body>

@@ -4,7 +4,7 @@ var conn = require('../lib/db');
 var bcrypt = require('bcrypt');
 
 router.get('/login', function(req,res,next){
-    res.render('../views/login',{ messages:req.session?.flash});
+    res.render('../views/login',{ messages:req.session?.flash, my_session: req.session});
     
     next();
 });
@@ -25,18 +25,18 @@ router.post('/login', async function(req, res) {
                 req.session.loggedin = true;
                 req.session.first_nm = rows[0].first_nm;
                 req.session.last_nm = rows[0].last_nm;
-                // req.session.emply_id = rows[0].emply_id;
+                req.session.tour_ref_num = rows[0].tour_ref_num;
                 req.session.is_authorised = rows[0].authorised;
-                if (req.session.is_authorised == 1) {
+            //     if (req.session.is_authorised == 1) {
 
-                    res.render('tour_com_view', {
-                        user: rows[0], 
-                        my_session: req.session
-                    });
+            //         res.redirect('manage_booking', {
+            //             user: rows[0], 
+            //             // my_session: req.session
+            //         });
                     
-                } else if (req.session.is_authorised == 0 ) {
-                    res.redirect('/manage_tour_com')
-                }
+            //     } else if (req.session.is_authorised == 0 ) {
+                    res.redirect('/manage_booking')
+            //     }
                return 
              }
              else {

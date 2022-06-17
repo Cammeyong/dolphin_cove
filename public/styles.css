@@ -5,19 +5,27 @@
 }
 nav {
     width: 100%; 
-    position: relative;
-    background-color: blue;
-    
+    position: relative; 
+    display: flex;  
+}
+nav img {
+    cursor: pointer;
 }
 nav ul {
+    background-color: blue;
     list-style: none;
     display: flex;
-    width: 40%;
-    justify-content: space-between;
-    margin-left: 50%;
+    width: 90%;
+    justify-content: space-around;
+    margin-left: 10%;
+    padding-top: 1%;
     
 }nav ul li {
     padding: 10px 5px;
+    transition: all 0.7s ease-in;
+}
+nav ul li:hover{
+    transform: scale(0.95);
 }
 nav ul li a{
     text-decoration: none;
@@ -38,7 +46,7 @@ nav ul li a{
     width: 220px;
     height: 200px;
 }
-.logForm input[name="email"], input[name="password"] {
+.logForm > input[name="email"], .logform > input[name="password"] {
     padding: 3%;
     width: 70%;
     border-radius: 15px;
@@ -61,13 +69,22 @@ nav ul li a{
     border-radius: 20px;
     border: none;
 }
-
+h1 {
+    border: 4px solid gold;
+    width: 70%;
+    margin: 2% 15% 0 15%;
+    background-color: rgb(26, 26, 250);
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    padding: 20px;
+}
 .homeImg {
     background-image: url(https://cdn1.dtraveller.net/content/aquaventuras/roys/banner_royal_aqua_VIP.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    height: 34rem;
+    height: 26rem;
     animation: slide 20s infinite;
     max-width: 100%;
     display: flex;
@@ -88,4 +105,502 @@ nav ul li a{
         background-image: url(https://www.dolphincoveja.com/Content/src/programs/ne/locacion-Dolphin-Cove-Negril.jpg); 
     }
 
+}
+.packagesImg {
+    background-image: url(https://cdn1.dtraveller.net/content/aquaventuras/sadv/nada-con-delfines-experiencia-vallarta.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 34rem;
+    /* max-width: 100%; */
+    
+} 
+.packagesImg2 {
+    background-image: url(https://www.dolphindiscovery.com/program/img/large-adventure.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 24rem;
+    margin: 5% 2%;
+    /* max-width: 95%; */
+}
+.rotateImgCon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10% 0;
+}
+.rotateImg {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: animate 30s linear infinite;
+}
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+.rotateImg span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d ;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+    -webkit-box-reflect: below 0PX linear-gradient(transparent,transparent,#0006);
+}
+.rotateImg span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.index{
+    margin: 5% 2%;
+    font-size: 1.8em;
+}
+footer {
+    background-image: url(https://marineland.net/wp-content/themes/marineland/images/footerbg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 30rem;
+    position: relative;
+    margin-top: 6%;
+}
+.topFooter{
+    width: 100%;
+    color: white;
+    line-height: 1.76;
+    font-size: 1.3rem;
+    margin-top: 2%;
+} 
+
+.topFooter > .row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 2%;
+    padding-top: 2%;
+}
+.topFooter > .row > .col {
+    flex: 25%;
+
+}
+.topFooter > .row > .col > .text {
+    font-size: 1.6rem;
+    font-weight: bolder;
+    color: white;
+    width: 80%;
+}
+.col3 > ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    max-width: 70%;
+    margin-top: 3%;
+    font-size: 1.8rem;
+}
+
+.middleFooter > h2 {
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    margin: 2% 0;
+}
+
+.middleFooter > ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    /* filter: blur(2px 3px 2px white); */
+    margin-bottom: 2%;
+}
+.bottomFooter {
+    display: flex;
+    background-color: blue;
+    bottom: 0;
+    padding: 1%;
+    align-content: center;
+    justify-content: center;
+}
+.bottomFooter > ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+.bottomFooter > ul > li {
+    border-right: 1px solid white;
+    padding-right: 2%;
+    
+}
+/* .bottomFooter > ul > li > a::after {
+    content: '''          |';
+    color: white;
+    
+} */
+.bottomFooter > ul > li > a{
+    text-decoration: none;
+    color: white;
+
+
+}
+.packageContainer {
+    width: 100%;
+    margin: 3% 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   }
+.packages {
+    width: 400px;
+    margin-bottom: 2%;
+    margin-right: 2%;
+    
+}
+.packages img {
+    height: 300px;
+    width: 400px;   
+}
+
+.bookingCard {
+    margin: 2% 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.bookingCard > ul {
+    list-style: none;
+    padding: 10px;
+    line-height: 1.4;
+    font-size: 1.5rem;
+    border: 2px solid blue;
+    box-shadow: 1px 2px 2px 2px rgba(2, 2, 175, 0.5);
+
+}
+table .tour_com_list {
+    width: 80%;
+    margin: 2% 10%;
+    width: 90%;
+    margin: 2% 5%;
+}
+table {
+    width: 80%;
+    margin: 2% 10%;
+
+    border-collapse: collapse;
+    text-align: center;
+}
+table th {
+    font-size: 1.3rem;
+    padding: 5px;
+    border-collapse: collapse;
+    background-color: blue;
+    color: white;
+
+}
+table td {
+    padding: 12px;
+}
+
+.update, .delete {
+    text-decoration: none;
+    padding: 6px;
+    width: 30%;
+    margin: 0 2%;
+    background-color: rgba(20, 3, 250);
+    color: white;
+    font-size: 1em;
+    border-radius: 15px;
+    border: none;
+}
+.userLogout button, .tourCom button {
+    padding: 10px;
+    width: 10%;
+    margin: 1% 2%;
+    background-color: blue;
+    color: white;
+    font-size: .90em;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+input[name="search"] {
+    padding: 15px;
+    border-radius: 20px;
+    margin: 4% 0 4% 35%;
+    width: 25%;
+    outline: none;
+    border: 1px solid blue;
+    
+
+}
+.CNP button {
+    padding: 10px;
+    width: 15%;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-size: .95em;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    float: right;
+    margin: 2% 10% 2% 0;
+}
+.CNP button:hover {
+    background-color: gold;
+    color: black;
+}
+.regCon {
+    width: 50%;
+    display: flex;
+    border: 2px solid blue;
+    margin-left: 25%;
+    margin-top: 3%;
+}
+.regCon > .col {
+    flex: 50%;
+    margin-right: 2%;
+    justify-content: space-around;
+    height: 170px;
+    padding: 2%;
+}
+.regCon > .col input {
+    padding: 5px;
+    width: 50%;
+    margin: 2% 0;
+}
+.regCon > .col input[name="date"] {
+    width: 64%;
+    margin-left: 19%;
+}
+.regCon > .col input[name="company_nm"] {
+    margin-left: 5%;
+}
+.regCon > .col input[name="reg_date"] {
+    margin-left: 2%;
+}
+.regCon > .col label {
+    font-weight: bold;
+}
+.regForm > h2 {
+    margin: 5% 0 2% 0;
+    color: blue;
+    font-size: 3rem;
+    text-align: center;
+}
+.regForm button {
+    padding: 10px;
+    width: 15%;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-size: .95em;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    margin: 2% 10% 2% 25%;
+    
+}
+.bookCon {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid blue;
+    box-shadow: 1px 2px 2px 2px rgb(0, 0, 255, 0.5);
+    margin-left: 15%;
+    padding: 5px;
+}
+.bookCon > .col {
+    flex: 50%;
+    padding: 5px;
+    line-height: 2;
+    font-size: 1.6rem;
+}
+.bookCon > .col label {
+    font-weight: bold;
+}
+.bookCon > .col > input, .col >select {
+    padding: 8px;
+}
+.bookForm > h2 {
+    margin: 5% 0 2% 0;
+    color: blue;
+    font-size: 3rem;
+    text-align: center;
+}
+.bookImg  {
+    background-image: url(https://www.dtraveller.com/promotions/imagesDD/banner_riviera-maya_25off_home_ing.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 20rem;
+}
+.bookCon > .col > select[name="tour_ref_num"] {
+    margin-left: 20%;
+}
+.bookCon > .col > select[name="adult_num"] {
+    margin-left: 10%;
+    width: 30%;
+}
+.bookCon > .col > select[name="child_num"] {
+    width: 28%;
+}
+.bookCon > .col > select[name="package_id"] {
+    width: 30%;
+    margin-left: 10%;
+}
+.bookCon > .col > input[name="guest_nm"] {
+    width: 30%;
+    margin-left: 16%;
+}
+.bookCon > .col > input[name="hotel_staying"] {
+    width: 28%;
+    margin-left: 10%;
+}
+.bookCon > .col > input[name="sche_date"] {
+    width: 28%;
+    margin-left: 8%;
+}
+.bookCon > .col > input[name="total_cost"] {
+    width: 28%;
+    margin-left: 25%;
+}
+.bookForm button {
+    padding: 15px;
+    width: 15%;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-size: .95em;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    margin: 2% 10% 2% 40%;
+    
+}
+.partners {
+    display: flex;
+    position: relative;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+}
+.partners span {
+padding-top: 2%;
+}
+.authRegCon {
+    width: 70%;
+    border: 1px solid blue;
+    box-shadow: 1px 2px 2px 2px rgb(0, 0, 255, 0.5);
+    margin-left: 15%;
+    padding: 5px;
+}
+.regImg {
+    background-image: url(https://marineland.net/wp-content/uploads/2019/06/dolphin_encounter_1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 23.5rem;
+}
+.regRow {
+    width: 60%;
+    display: flex;
+    margin-left: 20%;
+}
+.regRow > .regCol {
+    flex: 50%;
+}
+.regAuthForm {
+    width: 100%;
+    padding: 2%;
+    line-height: 3;
+    height: auto;
+    border-top: 3px solid blue;
+    border-right: 1px solid blue;
+    border-bottom: 1px solid blue;
+}
+.regAuthForm input {
+    padding: 10px;
+    outline: none;
+    border-radius: 20px;
+    border: 1px solid blue;
+}
+.regAuthForm select {
+    padding: 10px;
+    outline: none;
+    width: 50%;
+    border-radius: 20px;
+    border: 1px solid blue;
+}
+
+.regAuthForm label {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+h2 {
+    margin: 5% 0 2% 0;
+    color: blue;
+    font-size: 3rem;
+    text-align: center;
+    
+}
+.regAuthForm > select[name="type"] {
+    margin-left: 23%;
+}
+.regAuthForm > input[name="tour_ref_num"] {
+    margin-left: 13%;
+}
+.regAuthForm > input[name="password"] {
+    margin-left: 10%;
+}
+.regAuthForm button {
+    padding: 10px;
+    width: 30%;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-size: .95em;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    margin: 2% 10% 0% 40%;
+    
+}
+.updateForm {
+    width: 50%;
+    height: auto;
+    margin: 2% 0 2% 25%;
+    border: 1px solid blue;
+    padding: 5px;
+}
+.updateForm > .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.updateForm button {
+    padding: 15px;
+    width: 30%;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-size: .95em;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    margin: 2% 10% 2% 15%;
 }

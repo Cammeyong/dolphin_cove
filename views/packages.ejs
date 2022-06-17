@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= page_title  %> </title>
+    <link rel="stylesheet" href="../public/styles.css">
+</head>
+<body>
+    <%- include('nav.ejs') %> 
+
+  
+    <div class="packagesImg">
+
+        <img src="https://www.dolphinconnection.com/contentcdn/img/h…62x500_sliderhome-dolphindiscovery-principal.webp" alt="">
+    </div>
+
+
+    <h1>DISCOVER AND SWIM WITH OUR DOLPHINS PACKAGES</h1>
+
+
+    <div class="packageContainer">
+
+        
+            <% if(package.length) { for(var i = 0; i< package.length; i++) {%>
+            <div class="packages">
+                <p><%= package[i].package_nm %></p>
+                
+                <p><%= package[i].details%></p>
+
+                <img src="<%= package[i].package_img %>" alt="" name="url">
+
+                <p>Cost per Adult: $<%= package[i].price_adult %></p>
+                
+                <p>Cost per Child: $<%= package[i].price_child %></p>
+                
+                <br>
+        
+                <button>View More Info</button>
+                
+                <a href="./booking"><button type="sumbit">Book Now</button></a>
+            </div>
+            <% } %>
+                
+            <% } %>
+        
+        
+    </div>
+
+
+    <div class="packagesImg2">
+
+    </div>
+
+    <div class="partners">
+        <span>Proudly part of:</span>
+      <img src="https://www.dolphindiscovery.com/src/dolphin_company_color.png" alt="">  
+    </div>
+    
+
+   
+
+    <%- include('footer.ejs') %>
+
+</body>
+</html>

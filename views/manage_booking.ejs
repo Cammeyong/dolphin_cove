@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= page_title  %> </title>
+    <link rel="stylesheet" href="../public/styles.css">
+</head>
+<body>
+    
+    <%- include('nav.ejs') %> 
+    
+
+    <h1>Manage Bookings</h1>
+
+
+    <input type="search" name="search" id="" placeholder="Search Booking"> 
+    <br>
+    <form action="" method="post" class="allBooking">
+
+        <input type="hidden" name="id" id="id">
+
+        <!-- <div class="con">
+            <div class="CNP">
+                <a href="/register_tour_com"><button type="button">Register New Tour Company</button></a>
+            </div>
+
+        </div> -->
+        
+
+            <div class="bookingCard">
+                <% if(manBooking.length) { for(var i = 0; i< manBooking.length; i++) {%>
+                    <ul>
+                        <li>Tour Company: <%= manBooking[i].tour_ref_num %></li>
+                        <li>Package Selected: <%= manBooking[i].package_id %></li>
+                        <li>Voucher Number: <%= manBooking[i].ticket_num %></li>
+                        <li>Name of Guest: <%= manBooking[i].guest_nm %></li>
+                        <li>Number of Adults: <%= manBooking[i].adult_num %></li>
+                        <li>Number of Children: <%= manBooking[i].child_num %></li>
+                        <li>Date of Booking: <%= new Date(manBooking[i].date_of_booking).toLocaleDateString('fr-CA') %></li>
+                        <li>Staying at Hotel: <%= manBooking[i].hotel_staying %></li>
+                        <li>Reservation Date: <%= new Date(manBooking[i].sche_date).toLocaleDateString('fr-CA') %></li>
+                        <li>Total Cost: $<%= manBooking[i].total_cost %></li>
+                        <li>Payment Method: <%= manBooking[i].pay_id %></li>
+                        
+                        <li>
+                            <a href="/man_booking/edit/<%=manBooking[i].id%>" class="update">Edit</a>
+                            <a href="/man_booking/delete/<%=manBooking[i].id%>" class="delete">Delete</a>
+                        </li>
+                    </ul>
+                <% } %>
+                <%
+        
+                }else{ %>
+                    <div>
+                        <p colspan="5" style="text-align: center;"><b>No Reservation Made</p>
+                    </div>
+                <% } %>
+            </tbody>
+
+        
+               
+    </form>
+    
+</body>
+</html>

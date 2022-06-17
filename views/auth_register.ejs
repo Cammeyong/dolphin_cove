@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/styles.css">
+</head>
+<body>
+
+    <%- include('nav.ejs') %> 
+
+    <h2>Register Authorised User</h2>
+
+    <div class="regRow">
+        <div class="regImg regCol"></div>
+
+        <form action="/auth_register/add" method="post" class="regAuthForm regCol">
+                    
+           
+                <label for="">Employee Id #:</label>
+                <input type="text" name="tour_ref_num" id="tour_ref_num" placeholder="Employee Id">
+
+                <br>
+
+                <label for="">User Type:</label>
+                <select name="type" id="type">
+                    <option>--select--</option>
+                    <option value="Staff">Staff</option>
+                    <option value="Tour Company">Tour Company</option>
+                </select>
+
+                <br>
+
+                <label for="">Enter Address Email:</label>
+                <input type="email" name="email" id="email">
+    
+                <br>
+
+                <label for=""> Enter Password:</label>
+                <input type="password" name="password" id="password">
+                <br>
+    
+                <label for="">Authorisation Level:</label>
+                <select name="authorised">
+                    <option>--select--</option>
+                    <option value="0">Level 1</option>
+                    <option value="1">Level 2</option>
+                </select>
+
+                <br>
+    
+                <button type="submit">Register</button>
+                
+            
+           
+        </form>
+    </div>
+    
+   
+</body>
+</html>

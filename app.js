@@ -20,9 +20,10 @@ var indexRoute = require('./routes/index');
 var bookingRoute = require('./routes/booking');
 var register_tour_comRoute = require('./routes/register_tour_com');
 var manage_tour_comRoute = require('./routes/manage_tour_com');
-// var employee_payslip_listRoute = require('./routes/employee_payslip_list');
-// var employee_payslip_viewRoute = require('./routes/employee_payslip_view');
+var auth_registerRoute = require('./routes/auth_register');
+var manage_bookingRoute = require('./routes/manage_booking');
 var loginRoute = require('./routes/login');
+var packagesRoute = require('./routes/packages');
 
 
 
@@ -40,9 +41,10 @@ app.use(session({
 app.use(flash());
 
 //routing middleware
-// app.use(employee_registerRoute);
+app.use(manage_bookingRoute);
 app.use(loginRoute);
-// app.use(view_payslipRoute);
+app.use(packagesRoute);
+app.use(auth_registerRoute);
 app.use(manage_tour_comRoute);
 app.use(register_tour_comRoute);
 app.use(bookingRoute),

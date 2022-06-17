@@ -5,15 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../public/styles.css">
 </head>
 <body>
+
     <nav>
-        
+        <a href="/"><img src="https://www.dolphincoveja.com/Content/src/logo.png" alt=""></a>
         <ul>
             <li><a href="/">Home</a></li>
-            <!-- <li><a href="/employee_register">Register</a></li> -->
-            <li><a href="/login">Login</a></li>
+            <li><a href="packages">Packages</a></li>
+            <!-- <li><a href="/login">Login</a></li> -->
+            <% if (my_session.loggedin == true) { %>
+               <li><a href="/logout">Logout</a></li>
+                <% } else { %>
+                <li><a href="/login">Login</a></li>
+         <% } %>
             <li><a href="/booking">Book Now</a></li>
+            <% if (my_session.tour_ref_num == 1) { %> 
+                <li><a href="/manage_tour_com">Tour Companies</a></li>
+            <% } %>
+             <% if (my_session.tour_ref_num == 1) { %>
+                 <li><a href="/manage_booking">Manage Bookings</a></li>
+            <% } %> 
+            <% if (my_session.tour_ref_num == 1) { %>
+                <li><a href="/auth_register">Register Authorise User</a></li>
+           <% } %> 
         </ul>
     </nav>
 </body>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= page_title %> </title>
     <link rel="stylesheet" href="../public/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <%- include('nav.ejs') %> 
@@ -13,22 +14,41 @@
   
     <div class="homeImg"></div>
 
+    <h1>Welcome to Dolphin Cove Jamaica</h1>
+
+
+    <p class="index">One of the many things that make Dolphin Cove Jamaica special is that you can live the experience of swimming with dolphins in the natural Caribbean Sea. Here you have the opportunity to enjoy the company of different fish, rays, and other forms of natural sea life. Dolphin Cove Jamaica is the place to spend the day enjoying lots of fun activities. There is truly something for everyone!</p>
 
     
-
-    <h1>Dolphin Cove</h1>
-
-    <% 
-        if(my_session.loggedin == true){
-    %> 
-        <a href="/logout"><button type="submit" class="welUserLogout">Logout</button></a>
+    <div class="rotateImgCon">
         
-        <h3 class="welUser">Welcome <%= my_session.first_nm %>
-            </h3>       
-     
-    <% 
-        }
-    %>
+        <div class="rotateImg">
+
+        
+        <span style="--i:1;"><img src="https://marineland.net/wp-content/uploads/2018/04/MDA_ExperienceSlider_TrainerForADay_LogoEdit.jpg" alt=""></span>
+        <span style="--i:2;"><img src="https://marineland.net/wp-content/uploads/2018/04/MDA_ExperienceSlider_FinsAndFreedomTours.jpg" alt=""></span>
+        <span style="--i:3;"><img src="https://marineland.net/wp-content/uploads/2021/05/MDA_ExperienceSlider_Edeals-2021.jpg" alt=""></span>
+        <span style="--i:4;"><img src="https://marineland.net/wp-content/uploads/2018/04/MDA_ExperienceSlider_EcoTours.jpg" alt=""></span>
+        <span style="--i:5;"><img src="https://marineland.net/wp-content/uploads/2018/04/MDA_ExperienceSlider_DolphinDesigns.jpg" alt=""></span>
+        <span style="--i:6;"><img src="https://www.dolphincoveja.com/Content/src/program-1.jpg" alt=""></span>
+        <span style="--i:7;"><img src="https://cdn.dtraveller.net/content/homedd/Dolphin-Royal-Swim-dorsal-ride-2-dolphins.webp" alt=""></span>
+        <span style="--i:8;"><img src="https://marineland.net/wp-content/uploads/2019/09/Tortoise-Hold-220x220.png" alt=""></span>
+
+        </div>
+    </div>
     
+
+    <p class="index">Discover the oceanfront playground that has delighted visitors since 1938. Make an ocean of memories as you meet bottlenose dolphins up close, experience the wonder of marine life, explore our history, and even swim with dolphins in our unique educational programs. Plan your adventure today.</p>
+
+    <div>
+
+        <video loop="loop" width="1349" height="450" muted="true" autoplay="true" playsinline="true"   style="top: 50; left: 0; width: 100%; height: auto; margin-bottom: 2%;">
+                            <source src="https://marineland.net/wp-content/uploads/2018/04/MDA_Sequence1.mp4" type="video/mp4">
+                            <source src="https://marineland.net/wp-content/uploads/2018/04/Sequence-01.webm" type="video/webm">
+        </video>
+    </div>
+    
+
+<%- include('footer.ejs') %> 
 </body>
 </html>
