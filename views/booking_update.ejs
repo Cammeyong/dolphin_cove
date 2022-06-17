@@ -21,68 +21,80 @@
         <div class="container">
 
             <div class="dateInfo col">
-                <label for="">Reference Number:
-                    <input type="text" name="tour_ref_num" value="<%= data[0].tour_ref_num %>" placeholder="<%= data[0].etour_ref_num %>" />
+                <label for="">Campany Name:
+                    <input type="text" name="tour_ref_num" value="<%= data[0].company_nm %>" placeholder="<%= data[0].company_nm %>" />
                 </label>
+
                 <br><br>
                 <pre></pre>
+
+                <label for="">Voucher Number:
+                    <input type="text" name="ticket_num" value="<%= data[0].ticket_num %>" placeholder="<%= data[0].ticket_num %>" />
+                </label>
+        
+            </div>
+
+            <div class="netIncome col">
 
                 <label for="">Registration Date:
                     <input type="date" name="date_of_booking" value="<%= new Date(data[0].date_of_booking).toLocaleDateString('fr-CA') %>" placeholder="<%= new Date(data[0].date_of_booking).toLocaleDateString('fr-CA') %>" />
                 </label>
+
                 <br><br>
                 <pre></pre>
 
-                <label for="">Hotel Staying:
-                    <input type="text" name="hotel_staying" value="<%= data[0].hotel_staying %>" placeholder="<%= data[0].hotel_staying %>" />
+                <label for="">Name of Guest:
+                    <input type="text" name="guest_nm" value="<%= data[0].guest_nm %>" placeholder="<%= data[0].guest_nm %>" />
                 </label>
+                
             </div>
 
             <div class="netIncome col">
-                <label for="">Voucher Number
-                    <input type="text" name="ticket_num" value="<%= data[0].ticket_num %>" placeholder="<%= data[0].ticket_num %>" />
+               
+                <label for="">Hotel Staying:
+                    <input type="text" name="hotel_staying" value="<%= data[0].hotel_staying %>" placeholder="<%= data[0].hotel_staying %>" />
                 </label>
+
                 <br><br>
                 <pre></pre>
 
                 <label for="">Package Selected:
-                    <input type="text" name="package_id" value="<%= data[0].package_id %>" placeholder="<%= data[0].package_id %>" />
+                    <input type="text" name="package_id" value="<%= data[0].package_nm %>" placeholder="<%= data[0].package_nm %>" />
                 </label>
-            </div>
 
-            <div class="netIncome col">
-                <label for="">Name of Guest:
-                    <input type="text" name="guest_nm" value="<%= data[0].guest_nm %>" placeholder="<%= data[0].guest_nm %>" />
-                </label>
-                <br><br>
-                <pre></pre>
-
-                <label for="">Number of Adult(s):
-                    <input type="text" name="adult_num" value="<%= data[0].adult_num %>" placeholder="<%= data[0].adult_num %>" />
-                </label>
-            </div>
-
-            <div class="netIncome col">
-                <label for="">Number of Children:
-                    <input type="text" name="child_num" value="<%= data[0].child_num %>" placeholder="<%= data[0].child_num %>" />
-                </label>
                 <br><br>
                 <pre></pre>
 
                 <label for="">Reservation Date:
                     <input type="date" name="sche_date" value="<%= new Date(data[0].sche_date).toLocaleDateString('fr-CA') %>" placeholder="<%= new Date(data[0].sche_date).toLocaleDateString('fr-CA') %>" />
                 </label>
+
+            </div>
+
+            <div class="netIncome col">
+
+                <label for="">Number of Adult(s):
+                    <input type="text" name="adult_num" value="<%= data[0].adult_num %>" placeholder="<%= data[0].adult_num %>" />
+                </label>
+
+                <br><br>
+                <pre></pre>
+
+                <label for="">Number of Children:
+                    <input type="text" name="child_num" value="<%= data[0].child_num %>" placeholder="<%= data[0].child_num %>" />
+                </label>
+                
             </div>
 
             <div class="netIncome col">
                 <label for="">Total Cost:
-                    <input type="text" name="total_cost" value="<%= data[0].total_cost %>" placeholder="<%= data[0].total_cost %>" />
+                    <input type="text" name="total_cost" value="$<%= data[0].total_cost %>" placeholder="<%= data[0].total_cost %>" />
                 </label>
                 <br><br>
                 <pre></pre>
 
                 <label for="">Payment Method:
-                    <input type="text" name="pay_id" value="<%= data[0].pay_id %>" placeholder="<%= data[0].pay_id %>" />
+                    <input type="text" name="pay_id" value="<%= data[0].pay_method %>" placeholder="<%= data[0].pay_method %>" />
                 </label>
             </div>
 

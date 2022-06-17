@@ -25,21 +25,27 @@
         
             <% if(package.length) { for(var i = 0; i< package.length; i++) {%>
             <div class="packages">
-                <p><%= package[i].package_nm %></p>
+                <h3><%= package[i].package_nm %></h3>
                 
                 <p><%= package[i].details%></p>
 
                 <img src="<%= package[i].package_img %>" alt="" name="url">
 
-                <p>Cost per Adult: $<%= package[i].price_adult %></p>
+                <div class="pCost">
+
+                    <p>Cost per Adult: $<%= package[i].price_adult %></p>
                 
-                <p>Cost per Child: $<%= package[i].price_child %></p>
+                    <p>Cost per Child: $<%= package[i].price_child %></p>
+
+                    <p>Cost for Infants: <%= package[i].infant %></p>
+                    
+                </div>
                 
                 <br>
         
-                <button>View More Info</button>
+                <button class="vMore">View More Info</button>
                 
-                <a href="./booking"><button type="sumbit">Book Now</button></a>
+                <a href="./booking"><button type="sumbit" class="subBtn">Book Now</button></a>
             </div>
             <% } %>
                 

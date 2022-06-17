@@ -11,7 +11,7 @@ var conn = require('../lib/db');
 
 router.get('/register_tour_com', function(req,res,next){
 
-    if(req.seesion.loggedin == true) {
+    if(req.session.loggedin == true) {
  
         conn.query ("SELECT * FROM tour_companies", function(err, rows) {
             if(err){

@@ -5,43 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../public/styles.css">
+    <link rel="stylesheet" href="../../public/styles.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        nav {
-            width: 100%; 
-            position: relative;
-            background-color: blue;
-            
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            width: 40%;
-            justify-content: space-between;
-            margin-left: 50%;
-            
-        }nav ul li {
-            padding: 10px 5px;
-        }
-        nav ul li a{
-            text-decoration: none;
-            color: white;
-            font-size: 1.3em;
-        }
         form {
             margin: 5% 0 0 28%;
             width: 800px;
             height: 550px;
-        }
-        h1 {
-            margin: 4% 0;
-            text-align: center;
-            color: blue;
         }
         .dateInfo {
             width: 100%;
@@ -95,7 +64,7 @@
 
     <%- include('nav.ejs') %> 
 
-    <h1>Update Tour Company Information</h1>
+    <h2>Update Tour Company Information</h2>
     
     <form action="/tour_com/update/:id" method="post">
 
@@ -106,8 +75,8 @@
         <div class="container">
 
             <div class="dateInfo col">
-                <label for="">Reference Number:
-                    <input type="text" name="tour_ref_num" value="<%= data[0].tour_ref_num %>" placeholder="<%= data[0].etour_ref_num %>" />
+                <label for="">Company Name:
+                    <input type="text" name="tour_ref_num" value="<%= data[0].tour_ref_num %>" placeholder="<%= data[0].tour_ref_num %>" />
                 </label>
                 <br><br>
                 <pre></pre>

@@ -5,7 +5,9 @@ var conn = require('../lib/db');
 router.get('/manage_booking', function(req, res, next) {
     
     if (req.session.tour_ref_num == 1) {
-        conn.query('SELECT * FROM bookings', function(err,row)  {
+
+        conn.query("SELECT b.*, p.package_nm, tc.company_nm, pm.pay_method FROM dolphin_cove.packages p, dolphin_cove.bookings b, dolphin_cove.tour_companies tc, dolphin_cove.payment_method pm WHERE p.package_id = b.package_id AND tc.tour_ref_num = b.tour_ref_num AND pm.id = b.pay_id", function(err,row)  {
+        
             // console.log(req.session); 
             if(err){ 
                 // res.render('../views/manage_booking');   
@@ -20,9 +22,10 @@ router.get('/manage_booking', function(req, res, next) {
                 });
             }                    
         });
+
     }else if (req.session.tour_ref_num !== 1) { 
-        conn.query('SELECT * FROM bookings WHERE tour_ref_num =' + req.session.tour_ref_num, function(err,row)  {
-            if(err){ 
+        conn.query('SELECT b.*, p.package_nm, tc.company_nm, pm.pay_method FROM dolphin_cove.packages p, dolphin_cove.bookings b, dolphin_cove.tour_companies tc, dolphin_cove.payment_method pm WHERE p.package_id = b.package_id AND tc.tour_ref_num = b.tour_ref_num AND pm.id = b.pay_id AND tc.tour_ref_num =' + req.session.tour_ref_num, function(err,row)  {
+            if(err) { 
             // console.log(req.session); 
             // res.render('../views/manage_booking');   
             }
@@ -41,7 +44,7 @@ router.get('/manage_booking', function(req, res, next) {
 
 router.get('/man_booking/edit/:id', function(req, res, next) {
     if(req.session.loggedin == true ) {
-        conn.query('SELECT * FROM bookings WHERE id='+ req.params.id, function(err,row)     {
+        conn.query('SELECT b.*, p.package_nm, tc.company_nm, pm.pay_method FROM dolphin_cove.packages p, dolphin_cove.bookings b, dolphin_cove.tour_companies tc, dolphin_cove.payment_method pm WHERE p.package_id = b.package_id AND tc.tour_ref_num = b.tour_ref_num AND pm.id = b.pay_id AND b.id='+ req.params.id, function(err,row)     {
     
         if(err){
             //req.flash('error', err); 

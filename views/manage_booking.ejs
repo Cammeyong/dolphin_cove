@@ -32,8 +32,8 @@
             <div class="bookingCard">
                 <% if(manBooking.length) { for(var i = 0; i< manBooking.length; i++) {%>
                     <ul>
-                        <li>Tour Company: <%= manBooking[i].tour_ref_num %></li>
-                        <li>Package Selected: <%= manBooking[i].package_id %></li>
+                        <li>Tour Company: <%= manBooking[i].company_nm %></li>
+                        <li>Package Selected: <%= manBooking[i].package_nm %></li>
                         <li>Voucher Number: <%= manBooking[i].ticket_num %></li>
                         <li>Name of Guest: <%= manBooking[i].guest_nm %></li>
                         <li>Number of Adults: <%= manBooking[i].adult_num %></li>
@@ -42,7 +42,7 @@
                         <li>Staying at Hotel: <%= manBooking[i].hotel_staying %></li>
                         <li>Reservation Date: <%= new Date(manBooking[i].sche_date).toLocaleDateString('fr-CA') %></li>
                         <li>Total Cost: $<%= manBooking[i].total_cost %></li>
-                        <li>Payment Method: <%= manBooking[i].pay_id %></li>
+                        <li>Payment Method: <%= manBooking[i].pay_method %></li>
                         
                         <li>
                             <a href="/man_booking/edit/<%=manBooking[i].id%>" class="update">Edit</a>
