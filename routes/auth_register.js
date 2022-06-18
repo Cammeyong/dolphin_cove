@@ -25,7 +25,7 @@ router.get('/auth_register', function(req,res,next){
 
 router.post('/auth_register/add', async function(req,res,){
    
-    if (req.seesion.loggedin == true) {
+    if (req.session.loggedin == true) {
         try {
             var password = req.body.password;
             password = await bcrypt.hash(password, 10);

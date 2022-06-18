@@ -633,12 +633,12 @@ h2 {
     margin: 2% 10% 0% 40%;
     
 }
-.row {
+.rowUpdate {
     display: flex;
     width: 80%;
     margin: 0 0 4% 10%;
 }
-.col {
+.colUpdate {
     flex: 50%;
 }
 .updateImg {
@@ -646,10 +646,10 @@ h2 {
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    height: 30.5rem;
+    height: 30.6rem;
 }
 .updateForm {
-    width: 80%;
+    width: 70%;
     height: auto;
     border-top: 5px solid blue;
     border-bottom: 5px solid blue;
@@ -662,6 +662,11 @@ h2 {
     flex-wrap: wrap;
 }
 .updateForm input {
+    border: none;
+    font-size: 1.2rem;
+    outline: none;
+}
+.updateForm select {
     border: none;
     font-size: 1.2rem;
     outline: none;

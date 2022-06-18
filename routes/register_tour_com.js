@@ -63,7 +63,7 @@ router.post('/tour_com/add', async function(req,res,){
         if(err) {
             console.log(err);
         } else {
-            res.redirect('/')
+            res.redirect('/manage_tour_com')
         }
         // res.send(JSONResponse(results));
         });

@@ -12,10 +12,10 @@
 
     <h2>Update Booking Information</h2>
 
-   <div class="row">
-       <div class="updateImg col"></div>
+   <div class="rowUpdate">
+       <div class="updateImg colUpdate"></div>
 
-       <form action="/bookingInfo/update/:id" method="post" class="updateForm col">
+       <form action="/bookingInfo/update/:id" method="post" class="updateForm colupdate">
 
 
         <input type="hidden" name="id" value="<%= data[0].id %>"/>
@@ -23,10 +23,18 @@
 
         <div class="container">
 
-            <div class="dateInfo col">
-                <label for="">Campany Name:
-                    <input type="text" name="tour_ref_num" value="<%= data[0].company_nm %>" placeholder="<%= data[0].company_nm %>" />
-                </label>
+            <div class="colUpdate">
+                <label for="">Campany Name:</label>
+                <select name="tour_ref_num" id="tour_ref_num" value="<%= data[0].tour_ref_num %>">
+                    <option value="1">Dolphin Cove</option>
+                    <option value="2">Dream Tours</option>
+                    <option value="3">Camelious Tours</option>
+                    <option value="4">Scarlet Tours</option>
+                    <option value="5">Pleasure Tours</option>
+                    <option value="6">Sure Tours</option>
+                    <option value="8">Caribbean Tours</option>
+                    <option value="9">Luxury Tours</option>
+                </select>
 
                 <br><br>
                 <pre></pre>
@@ -37,7 +45,7 @@
         
             </div>
 
-            <div class="netIncome col">
+            <div class="colUpdate">
 
                 <label for="">Registration Date:
                     <input type="date" name="date_of_booking" value="<%= new Date(data[0].date_of_booking).toLocaleDateString('fr-CA') %>" placeholder="<%= new Date(data[0].date_of_booking).toLocaleDateString('fr-CA') %>" />
@@ -52,7 +60,7 @@
                 
             </div>
 
-            <div class="netIncome col">
+            <div class="colUpdate">
                
                 <label for="">Hotel Staying:
                     <input type="text" name="hotel_staying" value="<%= data[0].hotel_staying %>" placeholder="<%= data[0].hotel_staying %>" />
@@ -61,9 +69,14 @@
                 <br><br>
                 <pre></pre>
 
-                <label for="">Package Selected:
-                    <input type="text" name="package_id" value="<%= data[0].package_nm %>" placeholder="<%= data[0].package_nm %>" />
-                </label>
+                <label for="">Package Selected:</label>
+                <select name="package_id" id="package_nm" value="<%= data[0].package_nm %>"> 
+                    <option value="1">Dolphin Royal Swim</option>
+                    <option value="2">Dolphin Swim Adventure</option>
+                    <option value="3">Encounter</option>
+                    <option value="4">Admission Plus</option>
+                    <option value="5">Shark Encounter</option>
+                </select>
 
                 <br><br>
                 <pre></pre>
@@ -74,7 +87,7 @@
 
             </div>
 
-            <div class="netIncome col">
+            <div class="colUpdate">
 
                 <label for="">Number of Adult(s):
                     <input type="text" name="adult_num" value="<%= data[0].adult_num %>" placeholder="<%= data[0].adult_num %>" />
@@ -90,8 +103,8 @@
                 <br><br>
                 <pre></pre>
 
-                <label for="">Total Cost:
-                    <input type="text" name="total_cost" value="$<%= data[0].total_cost %>" placeholder="<%= data[0].total_cost %>" />
+                <label for="">Total Cost: 
+                    <input type="text" name="total_cost" value="<%= data[0].total_cost %>" placeholder="<%= data[0].total_cost %>" />
                 </label>
 
                 <br><br>
@@ -100,13 +113,18 @@
             </div>
 
             
-            <div class="netIncome col">
+            <div class="colUpdate">
                
                 <pre></pre>
 
-                <label for="">Payment Method:
-                    <input type="text" name="pay_id" value="<%= data[0].pay_method %>" placeholder="<%= data[0].pay_method %>" />
-                </label>
+                <label for="">Payment Method:</label>
+                <select name="pay_id" id="pay_id" value="<%= data[0].pay_method %>">
+                    <option value="1"> Cash</option>
+                    <option value="2">Credit Card</option>
+                    <option value="3">Debit Card</option>
+                    <option value="4">Bank Deposit</option>
+                    <option value="5">Mobile Payment</option>
+                </select>
             </div>
 
             
